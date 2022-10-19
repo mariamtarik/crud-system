@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section>
+        <h1 class="text-center text-muted p-5" >CRUD SYSTEM</h1>
+    </section>
+    <div class="w-75 m-auto pb-4">
+
+        <div class="form-group">
+            <label for="productName">productName :</label>
+            <input type="text" class="form-control" id="productName">
+        
+                 <p class=" d-none alert alert-danger mt-2" id="nameError"> your product must start capital then from 3-8 character </p>
+           
+
+        </div>
+        <div class="form-group">
+            <label for="productPrice">productPrice :</label>
+            <input type="number" class="form-control" id="productPrice">
+            <p class=" d-none alert alert-danger mt-2" id="priceError"> your product price from 10-10000 </p>
+
+        </div>
+
+        <div class="form-group">
+            <label for="productCategory">productCategory :</label>
+            <input type="text" class="form-control" id="productCategory">
+            <p class=" d-none alert alert-danger mt-2" id="CategoryError"> your product Category tv or mobile </p>
+
+        </div>
+
+        <div class="form-group">
+            <label for="productDesc">productDesc :</label>
+            <textarea style="resize: none;" type="text" class="form-control" id="productDesc"></textarea>
+
+        </div>
+
+        <button onclick="addProduct()" class="btn btn-info">add product</button>
+
+    </div>
+
+    <div class="w-50 m-auto p-3">
+        <input onkeyup="searchProducts(this.value)" type="text" placeholder="search" class="form-control" name="" id="">
+    </div>
+
+
+    <table class="table text-center w-75 m-auto py-3">
+        <thead>
+            <th>index</th>
+            <th>Name </th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Desc</th>
+            <th>update</th>
+            <th>delete</th>
+        </thead>
+        <tbody id="tableBody">
+
+
+            
+        </tbody>
+
+    </table>
+ 
+   
+  
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">update product</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="productName">productName :</label>
+                    <input type="text" class="form-control" id="productNameUpdate">
+                    <p class=" d-none alert alert-danger mt-2" id="nameErrorUpdate"> your product must start capital then from 3-8 character </p>
+        
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">productPrice :</label>
+                    <input type="number" class="form-control" id="productPriceUpdate">
+                    <p class=" d-none alert alert-danger mt-2" id="priceErrorUpdate"> your product price from 10-10000 </p>
+        
+                </div>
+        
+                <div class="form-group">
+                    <label for="productCategory">productCategory :</label>
+                    <input type="text" class="form-control" id="productCategoryUpdate">
+                    <p class=" d-none alert alert-danger mt-2" id="CategoryErrorUpdate"> your product Category tv or mobile </p>
+        
+                </div>
+        
+                <div class="form-group">
+                    <label for="productDesc">productDesc :</label>
+                    <textarea style="resize: none;" type="text" class="form-control" id="productDescUpdate"></textarea>
+        
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button onclick="addUpdateProduct()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+ 
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
